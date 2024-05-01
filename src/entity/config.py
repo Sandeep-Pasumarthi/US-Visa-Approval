@@ -21,7 +21,7 @@ training_pipeline_config_obj = TrainingPipelineConfig()
 class DataIngestionConfig:
     data_ingestion_dir=os.path.join(training_pipeline_config_obj.artifact_dir, DATA_INGESTION_DIR)
     feature_store_file_path = os.path.join(data_ingestion_dir, DATA_INGESTION_FEATURE_STORE_DIR, RAW_DATA_FILE)
-    train_file_path = os.path.join(data_ingestion_dir, DATA_INGESTION_FEATURE_STORE_DIR, TRAIN_DATA_FILE)
-    test_file_path = os.path.join(data_ingestion_dir, DATA_INGESTION_FEATURE_STORE_DIR, TEST_DATA_FILE)
+    train_file_path = os.path.join(data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TRAIN_DATA_FILE)
+    test_file_path = os.path.join(data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TEST_DATA_FILE)
     train_test_split_ratio = DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
     raw_data_collection = RAW_DATA_COLLECTION
