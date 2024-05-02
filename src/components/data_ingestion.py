@@ -29,6 +29,7 @@ class DataIngestion:
     def run(self) -> DataIngestionArtifact:
         df = self.__data_to_feature_store()
         train_df, test_df = self.__train_test_split(df, self.config.train_test_split_ratio)
+        os.makedirs(os.path.dirname(self.config.train_file_path), exist_ok=True)
         train_df.to_csv(self.config.train_file_path, index=False, header=True)
         test_df.to_csv(self.config.test_file_path, index=False, header=True)
         artifact = DataIngestionArtifact(self.config.train_file_path, self.config.test_file_path)
