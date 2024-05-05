@@ -34,3 +34,7 @@ def save_obj_file(path: str, content: object, replace: bool = False) -> None:
 
     with open(path, 'wb') as f:
         dill.dump(content, f)
+
+def load_obj_file(path: str) -> object:
+    with open(path, 'rb') as f:
+        return dill.load(f)

@@ -39,3 +39,10 @@ class DataTransformationConfig:
     transformed_train_file_path = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR, TRAIN_DATA_FILE.replace("csv", "npy"))
     transformed_test_file_path = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR, TEST_DATA_FILE.replace("csv", "npy"))
     transformed_object_file_path = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR, PREPROCESSING_FILE)
+
+@dataclass
+class ModelTrainerConfig:
+    model_trainer_dir = os.path.join(training_pipeline_config_obj.artifact_dir, MODEL_TRAINER_DIR)
+    trained_model_file_path = os.path.join(model_trainer_dir, MODEL_TRAINER_MODEL_DIR, MODEL_TRAINER_MODEL_FILE)
+    expected_accuracy = MODEL_TRAINER_EXPECTED_ACCURACY
+    model_config_file_path = MODEL_TRAINER_MODEL_CONFIG_FILE

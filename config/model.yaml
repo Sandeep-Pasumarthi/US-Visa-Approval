@@ -1,0 +1,4 @@
+model_params:
+  weights: "distance"
+  n_neighbors: 4
+  algorithm: "auto"
