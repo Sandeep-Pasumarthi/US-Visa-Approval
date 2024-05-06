@@ -57,3 +57,8 @@ class ModelEvaluationConfig:
 class ModelPusherConfig:
     bucket_name = MODEL_BUCKET_NAME
     s3_model_file_path = MODEL_FILE
+
+@dataclass
+class PredictorConfig:
+    model_file_path = MODEL_FILE
+    bucket_name = MODEL_BUCKET_NAME
