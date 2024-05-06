@@ -52,3 +52,8 @@ class ModelEvaluationConfig:
     change_threshold_score = MODEL_EVALUATION_CHANGE_THRESHOLD_SCORE
     bucket_name = MODEL_BUCKET_NAME
     s3_model_file_path = MODEL_FILE
+
+@dataclass
+class ModelPusherConfig:
+    bucket_name = MODEL_BUCKET_NAME
+    s3_model_file_path = MODEL_FILE
