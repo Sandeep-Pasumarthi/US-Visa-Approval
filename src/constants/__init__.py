@@ -42,3 +42,6 @@ AWS_REGION_NAME = "ap-south-1"
 MODEL_EVALUATION_CHANGE_THRESHOLD_SCORE: float = 0.02
 MODEL_BUCKET_NAME = "uvisaapprovalmodel"
 MODEL_PUSHER_S3_KEY = "model-registry"
+
+APP_HOST = "0.0.0.0"
+APP_PORT = "8080"
