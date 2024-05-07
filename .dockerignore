@@ -1,0 +1,7 @@
+artifact
+venv
+env
+.gitignore
+README.md
+LICENSE
+src.egg.info
