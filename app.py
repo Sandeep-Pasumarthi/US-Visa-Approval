@@ -66,7 +66,7 @@ async def predict(request: Request):
                 unit_of_wage=form.unit_of_wage,
                 full_time_position=form.full_time_position)
     classifier = Classifier()
-    result = classifier.predict(data)[0]
+    result = classifier.predict(data.as_dataframe())[0]
 
     if result == 1:
         result = "Visa Approved"

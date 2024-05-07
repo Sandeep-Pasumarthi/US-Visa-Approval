@@ -3,10 +3,6 @@ from src.entity.s3_estimator import S3Predictor
 
 from pandas import DataFrame
 
-import pandas as pd
-import numpy as np
-import os
-
 
 class Data:
     def __init__(self, continent, education_of_employee, has_job_experience, requires_job_training, no_of_employees, region_of_employment, prevailing_wage, unit_of_wage, full_time_position, company_age):

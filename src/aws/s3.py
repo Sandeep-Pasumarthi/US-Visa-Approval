@@ -1,13 +1,10 @@
 from src.configuration.aws_connector import S3Client
 
 from mypy_boto3_s3.service_resource import Bucket
-from botocore.exceptions import ClientError
 
 from io import StringIO
 from typing import Union, List
-from pandas import DataFrame
 
-import boto3
 import pickle
 import os
 
@@ -44,7 +41,7 @@ class SimpleStorageService:
         func = lambda: model_name if model_dir is None else model_dir + "/" + model_name
         model_path = func()
         file_obj = self.get_file_obj(model_path, bucket_name)
-        model_obj = self.read_object(file_obj)
+        model_obj = self.read_object(file_obj, decode=False)
         model = pickle.loads(model_obj)
         return model
 
