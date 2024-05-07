@@ -1,4 +1,5 @@
 from src.constants import APP_HOST, APP_PORT
+from src.pipeline.training import TrainingPipeline
 from src.pipeline.prediction import Data, Classifier
 
 from fastapi import FastAPI, Request
@@ -48,6 +49,12 @@ class DataForm:
 @app.get("/")
 async def index(request: Request):
     return templates.TemplateResponse("usvisa.html", {"request": request, "context": "Rendering"})
+
+@app.get("/train")
+async def train(request: Request):
+    pipeline = TrainingPipeline()
+    pipeline.run()
+    return templates.TemplateResponse("usvisa.html", {"request": request, "context": "Training Completed"})
 
 @app.post("/")
 async def predict(request: Request):

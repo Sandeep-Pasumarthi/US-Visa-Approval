@@ -37,7 +37,7 @@ class SimpleStorageService:
         file_objs = func(file_objs)
         return file_objs
     
-    def load_pkl_file(self, model_name: str, bucket_name: str, model_dir: str) -> object:
+    def load_pkl_file(self, model_name: str, bucket_name: str, model_dir: str=None) -> object:
         func = lambda: model_name if model_dir is None else model_dir + "/" + model_name
         model_path = func()
         file_obj = self.get_file_obj(model_path, bucket_name)
